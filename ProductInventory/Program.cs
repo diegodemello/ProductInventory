@@ -6,15 +6,16 @@ namespace ProductInventory
     {
         static void Main(string[] args)
         {
-            Product product = new Product();
-
             Console.WriteLine("Entre com os dados do produto.");
             Console.Write("Nome: ");
-            product.name = Console.ReadLine();
+            string name = Console.ReadLine();
             Console.Write("Preço: ");
-            product.price = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            double price = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             Console.Write("Quantidade em estoque: ");
-            product.amount = int.Parse(Console.ReadLine());
+            int amount = int.Parse(Console.ReadLine());
+
+            Product product = new Product(name, price, amount);
+
 
             Console.WriteLine();
             Console.WriteLine("Dados do produto: " + product);

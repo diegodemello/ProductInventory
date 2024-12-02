@@ -9,6 +9,13 @@ namespace ProductInventory
         public double price;
         public int amount;
 
+        public Product(string Name, double Price, int Amount)
+        {
+            name = Name;
+            price = Price;
+            amount = Amount;
+        }
+
         public double TotalValueAmount()
         {
             return price * amount;
