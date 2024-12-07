@@ -11,11 +11,10 @@ namespace ProductInventory
 
         public Product()
         {
-
+            amount = 10;
         }
 
-        public Product(string Name, double Price)
-        {
+        public Product(string Name, double Price) : this() {
             name = Name;
             price = Price;
         }
