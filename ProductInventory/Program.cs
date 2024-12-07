@@ -11,10 +11,14 @@ namespace ProductInventory
             string name = Console.ReadLine();
             Console.Write("Preço: ");
             double price = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            Console.Write("Quantidade em estoque: ");
-            int amount = int.Parse(Console.ReadLine());
 
-            Product product = new Product(name, price, amount);
+            Product product = new Product();
+
+            Product product2 = new Product { 
+                name = "TV", 
+                price = 900.00, 
+                amount = 4 
+            };
 
 
             Console.WriteLine();

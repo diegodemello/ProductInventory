@@ -9,11 +9,15 @@ namespace ProductInventory
         public double price;
         public int amount;
 
-        public Product(string Name, double Price, int Amount)
+        public Product()
+        {
+
+        }
+
+        public Product(string Name, double Price)
         {
             name = Name;
             price = Price;
-            amount = Amount;
         }
 
         public double TotalValueAmount()
