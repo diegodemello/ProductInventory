@@ -19,27 +19,37 @@ namespace ProductInventory
             _amount = Amount;
         }
 
-        public string GetName()
+        public string Name
         {
-            return _name;
-        }
-
-        public void SetName(string Name)
-        {
-            if (Name != null && Name.Length > 1)
+            get { return _name;
+            }
+            set
             {
-                _name = Name;
+                if (value != null && value.Length > 1)
+                {
+                    _name = value;
+                }
+                else
+                {
+                    Console.WriteLine("ERRO!");
+                }
             }
         }
 
-        public double GetPrice()
+        public double Price
         {
-            return _price;
+            get
+            {
+                return _price;
+            }
         }
 
-        public int GetAmount()
+        public int Amount
         {
-            return _amount;
+            get
+            {
+                return _amount;
+            }
         }
 
         public double TotalValueAmount()

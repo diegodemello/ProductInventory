@@ -8,7 +8,8 @@ namespace ProductInventory
         {
             Product product = new Product("TV", 500.00, 10);
 
-            product.SetName("TV 4K");
+            product.Name = "T";
+            Console.WriteLine(product.Name);
         }
     }
 }
