@@ -5,42 +5,65 @@ namespace ProductInventory
 {
     internal class Product
     {
-        public string name;
-        public double price;
-        public int amount;
+        private string _name;
+        private double _price;
+        private int _amount;
 
         public Product()
         {
-            amount = 10;
         }
 
-        public Product(string Name, double Price) : this() {
-            name = Name;
-            price = Price;
+        public Product(string Name, double Price, int Amount) {
+            _name = Name;
+            _price = Price;
+            _amount = Amount;
+        }
+
+        public string GetName()
+        {
+            return _name;
+        }
+
+        public void SetName(string Name)
+        {
+            if (Name != null && Name.Length > 1)
+            {
+                _name = Name;
+            }
+        }
+
+        public double GetPrice()
+        {
+            return _price;
+        }
+
+        public int GetAmount()
+        {
+            return _amount;
         }
 
         public double TotalValueAmount()
         {
-            return price * amount;
+            return _price * _amount;
         }
 
         public void AddAmount(int newAmount)
         {
-            amount += newAmount;
+            _amount += newAmount;
         }
 
         public void RemoveAmount(int newAmount)
         {
-            amount -= newAmount;
+            _amount -= newAmount;
         }
 
         public override string ToString()
         {
-            return name 
+            return _name
                 + ", R$ " 
-                + price.ToString("F2", CultureInfo.InvariantCulture)
+                + _price.ToString("F2", CultureInfo.InvariantCulture)
                 + ", "
-                + amount
+                + _amount
                 + " unidades, Total: R$ "
                 + TotalValueAmount().ToString("F2", CultureInfo.InvariantCulture);
         }
